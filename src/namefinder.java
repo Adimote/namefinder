@@ -65,7 +65,7 @@ public class namefinder {
 
 		// Create a scanner, which uses a regex to find the user
 		Scanner scanner = new Scanner(reader);
-		Pattern regex = Pattern.compile("<"+this.unique_html_identifier+">\\s*([^<]*)\\s*<",Pattern.MULTILINE);
+		Pattern regex = Pattern.compile("<"+Pattern.quote(this.unique_html_identifier)+">\\s*([^<]*)\\s*<",Pattern.MULTILINE);
 		String match = scanner.findWithinHorizon(regex,0);
 		scanner.close();
 		
